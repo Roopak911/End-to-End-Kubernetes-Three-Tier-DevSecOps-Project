@@ -10,17 +10,18 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    http:
-      paths:
-      - path: /
-          pathType: Prefix
+    
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
             backend:
               service:
                 name: api
                 port:   
                   number: 3500
-      - path: /
-          pathType: Prefix
+          - path: /
+            pathType: Prefix
             backend:
               service:
                 name: frontend
